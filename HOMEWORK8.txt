@@ -1,0 +1,368 @@
+CAROL GOODNIGHT
+
+
+
+
+QUESTION 1------------------------
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+
+SQL> 
+SQL> select lastname, firstname, state
+  2  from customers
+  3  where state = 'NJ'
+  4  
+SQL> /
+
+LASTNAME   FIRSTNAME  ST                                                                                                
+---------- ---------- --                                                                                                
+SMITH      JENNIFER   NJ                                                                                                
+FALAH      KENNETH    NJ                                                                                                
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+QUESTION 2-------------------------------------
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select order#, shipdate
+  2  from orders
+  3* where shipdate > '01-APR-09'
+  4  
+SQL> /
+
+    ORDER# SHIPDATE                                                                                                     
+---------- ---------                                                                                                    
+      1000 02-APR-09                                                                                                    
+      1004 05-APR-09                                                                                                    
+      1005 02-APR-09                                                                                                    
+      1006 02-APR-09                                                                                                    
+      1007 04-APR-09                                                                                                    
+      1008 03-APR-09                                                                                                    
+      1009 05-APR-09                                                                                                    
+      1010 04-APR-09                                                                                                    
+      1011 05-APR-09                                                                                                    
+      1013 04-APR-09                                                                                                    
+      1014 05-APR-09                                                                                                    
+      1017 05-APR-09                                                                                                    
+
+12 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> QUESTION 3--------------------------------------
+SQL> 
+SQL> 
+SQL> 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select title, category
+  2  from books
+  3* where category <> 'FITNESS'
+  4  /
+
+TITLE                          CATEGORY                                                                                 
+------------------------------ ------------                                                                             
+REVENGE OF MICKEY              FAMILY LIFE                                                                              
+BUILDING A CAR WITH TOOTHPICKS CHILDREN                                                                                 
+DATABASE IMPLEMENTATION        COMPUTER                                                                                 
+COOKING WITH MUSHROOMS         COOKING                                                                                  
+HOLY GRAIL OF ORACLE           COMPUTER                                                                                 
+HANDCRANKED COMPUTERS          COMPUTER                                                                                 
+E-BUSINESS THE EASY WAY        COMPUTER                                                                                 
+PAINLESS CHILD-REARING         FAMILY LIFE                                                                              
+THE WOK WAY TO COOK            COOKING                                                                                  
+BIG BEAR AND LITTLE DOVE       CHILDREN                                                                                 
+HOW TO GET FASTER PIZZA        SELF HELP                                                                                
+HOW TO MANAGE THE MANAGER      BUSINESS                                                                                 
+SHORTEST POEMS                 LITERATURE                                                                               
+
+13 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> QUESTION 4-----------------------------------------
+SQL> select lastname, customer#, state
+  2  from customers
+  3  where state = 'GA' or state = 'NJ'
+  4  order by lastname;
+
+LASTNAME    CUSTOMER# ST                                                                                                
+---------- ---------- --                                                                                                
+FALAH            1020 NJ                                                                                                
+LUCAS            1010 GA                                                                                                
+MONTIASA         1018 GA                                                                                                
+SMITH            1019 NJ                                                                                                
+
+SQL> 
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select lastname, customer#, state
+  2  from customers
+  3  where state = 'GA' or state = 'NJ'
+  4* order by 2
+  5  
+SQL> /
+
+LASTNAME    CUSTOMER# ST                                                                                                
+---------- ---------- --                                                                                                
+LUCAS            1010 GA                                                                                                
+MONTIASA         1018 GA                                                                                                
+SMITH            1019 NJ                                                                                                
+FALAH            1020 NJ                                                                                                
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> QUESTION 5------------------------------------
+SQL> 
+SQL> select order#, orderdate
+  2  from orders
+  3  where orderdate <= '01-APR-09';
+
+    ORDER# ORDERDATE                                                                                                    
+---------- ---------                                                                                                    
+      1000 31-MAR-09                                                                                                    
+      1001 31-MAR-09                                                                                                    
+      1002 31-MAR-09                                                                                                    
+      1003 01-APR-09                                                                                                    
+      1004 01-APR-09                                                                                                    
+      1005 01-APR-09                                                                                                    
+      1006 01-APR-09                                                                                                    
+
+7 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select order#, orderdate
+  2  from orders
+  3* where orderdate <= '01-APR-09'
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> QUESTION 6--------------------------------------------
+S
+
+  1  select lname, fname
+  2  from author
+  3  where lname like '%IN%'
+  4* order by lname
+SQL> /
+
+LNAME      FNAME                                                                                                        
+---------- ----------                                                                                                   
+AUSTIN     JAMES                                                                                                        
+MARTINEZ   SHEILA                                                                                                       
+ROBINSON   ROBERT                                                                                                       
+WILKINSON  ANTHONY                                                                                                      
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> QUESTION 7--------------------------------
+SQL> 
+SQL> 
+S
+
+S
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  select lastname, referred
+  2  from customers
+  3* where referred IS NOT NULL
+SQL> /
+
+LASTNAME     REFERRED                                                                                                   
+---------- ----------                                                                                                   
+GIANA            1003                                                                                                   
+PEREZ            1003                                                                                                   
+NGUYEN           1006                                                                                                   
+DAUM             1010                                                                                                   
+SMITH            1003                                                                                                   
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+
+SQL> 
+SQL> 
+SQL> 
+SQL> QUESTION 8----------------------------
+SQL> 
+
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select title, category
+  2  from books
+  3* where category = 'CHILDREN' or category ='COOKING'
+SQL> /
+
+TITLE                          CATEGORY                                                                                 
+------------------------------ ------------                                                                             
+BUILDING A CAR WITH TOOTHPICKS CHILDREN                                                                                 
+COOKING WITH MUSHROOMS         COOKING                                                                                  
+THE WOK WAY TO COOK            COOKING                                                                                  
+BIG BEAR AND LITTLE DOVE       CHILDREN                                                                                 
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select title, category
+  2  from books
+  3* where category like '&C&'
+SQL> /
+Enter value for c: 
+old   3: where category like '&C&'
+new   3: where category like '&'
+
+no rows selected
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select title, category
+  2  from books
+  3* where category like 'C%'
+SQL> /
+
+TITLE                          CATEGORY                                                                                 
+------------------------------ ------------                                                                             
+BUILDING A CAR WITH TOOTHPICKS CHILDREN                                                                                 
+DATABASE IMPLEMENTATION        COMPUTER                                                                                 
+COOKING WITH MUSHROOMS         COOKING                                                                                  
+HOLY GRAIL OF ORACLE           COMPUTER                                                                                 
+HANDCRANKED COMPUTERS          COMPUTER                                                                                 
+E-BUSINESS THE EASY WAY        COMPUTER                                                                                 
+THE WOK WAY TO COOK            COOKING                                                                                  
+BIG BEAR AND LITTLE DOVE       CHILDREN                                                                                 
+
+8 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select title, category
+  2  from books
+  3* where category between 'B' and 'COOK'
+SQL> /
+
+TITLE                          CATEGORY                                                                                 
+------------------------------ ------------                                                                             
+BUILDING A CAR WITH TOOTHPICKS CHILDREN                                                                                 
+DATABASE IMPLEMENTATION        COMPUTER                                                                                 
+HOLY GRAIL OF ORACLE           COMPUTER                                                                                 
+HANDCRANKED COMPUTERS          COMPUTER                                                                                 
+E-BUSINESS THE EASY WAY        COMPUTER                                                                                 
+BIG BEAR AND LITTLE DOVE       CHILDREN                                                                                 
+HOW TO MANAGE THE MANAGER      BUSINESS                                                                                 
+
+7 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select title, category
+  2  from books
+  3* where category between 'C' and 'COOK'
+SQL> /
+
+TITLE                          CATEGORY                                                                                 
+------------------------------ ------------                                                                             
+BUILDING A CAR WITH TOOTHPICKS CHILDREN                                                                                 
+DATABASE IMPLEMENTATION        COMPUTER                                                                                 
+HOLY GRAIL OF ORACLE           COMPUTER                                                                                 
+HANDCRANKED COMPUTERS          COMPUTER                                                                                 
+E-BUSINESS THE EASY WAY        COMPUTER                                                                                 
+BIG BEAR AND LITTLE DOVE       CHILDREN                                                                                 
+
+6 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> QUESTION 9------------------------------
+SQL> 
+S
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select title, isbn
+  2  from books
+  3  where title like '_A%' and title like '___N%'
+  4* order by title desc
+SQL> /
+
+TITLE                          ISBN                                                                                     
+------------------------------ ----------                                                                               
+PAINLESS CHILD-REARING         2491748320                                                                               
+
+SQL> 
+SQL> 
+SQL> 
+SQL> QUESTION 10---------------------------------------
+SQL> 
+SQ
+  1  select title, pubdate
+  2  from books
+  3* where pubdate between '01-JAN-05' and '31-DEC-05'
+SQL> /
+
+TITLE                          PUBDATE                                                                                  
+------------------------------ ---------                                                                                
+BODYBUILD IN 10 MINUTES A DAY  21-JAN-05                                                                                
+REVENGE OF MICKEY              14-DEC-05                                                                                
+HOLY GRAIL OF ORACLE           31-DEC-05                                                                                
+HANDCRANKED COMPUTERS          21-JAN-05                                                                                
+BIG BEAR AND LITTLE DOVE       08-NOV-05                                                                                
+SHORTEST POEMS                 01-MAY-05                                                                                
+
+6 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select title, pubdate
+  2  from books
+  3* where pubdate < '01-JAN-05' and > '31-DEC-05'
+SQL> /
+where pubdate < '01-JAN-05' and > '31-DEC-05'
+                                *
+ERROR at line 3:
+ORA-00936: missing expression 
+
+
+SQL> spool off
