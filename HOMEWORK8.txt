@@ -1,15 +1,3 @@
-CAROL GOODNIGHT
-
-
-
-
-QUESTION 1------------------------
-
-SQL> 
-SQL> 
-SQL> 
-SQL> 
-SQL> 
 
 SQL> 
 SQL> select lastname, firstname, state
@@ -58,9 +46,7 @@ SQL> /
 12 rows selected.
 
 SQL> 
-SQL> 
-SQL> 
-SQL> QUESTION 3--------------------------------------
+
 SQL> 
 SQL> 
 SQL> 
@@ -95,8 +81,7 @@ SHORTEST POEMS                 LITERATURE
 SQL> 
 SQL> 
 SQL> 
-SQL> 
-SQL> QUESTION 4-----------------------------------------
+
 SQL> select lastname, customer#, state
   2  from customers
   3  where state = 'GA' or state = 'NJ'
@@ -130,9 +115,7 @@ FALAH            1020 NJ
 SQL> 
 SQL> 
 SQL> 
-SQL> 
-SQL> 
-SQL> QUESTION 5------------------------------------
+
 SQL> 
 SQL> select order#, orderdate
   2  from orders
@@ -159,9 +142,6 @@ Wrote file afiedt.buf
 SQL> 
 SQL> 
 SQL> 
-SQL> 
-SQL> QUESTION 6--------------------------------------------
-S
 
   1  select lname, fname
   2  from author
@@ -179,17 +159,8 @@ WILKINSON  ANTHONY
 SQL> 
 SQL> 
 SQL> 
-SQL> 
-SQL> 
-SQL> 
-SQL> 
-SQL> 
-SQL> QUESTION 7--------------------------------
-SQL> 
-SQL> 
-S
 
-S
+SQL> 
 
 SQL> ED
 Wrote file afiedt.buf
@@ -208,14 +179,6 @@ DAUM             1010
 SMITH            1003                                                                                                   
 
 SQL> 
-SQL> 
-SQL> 
-SQL> 
-
-SQL> 
-SQL> 
-SQL> 
-SQL> QUESTION 8----------------------------
 SQL> 
 
 
@@ -309,12 +272,7 @@ BIG BEAR AND LITTLE DOVE       CHILDREN
 6 rows selected.
 
 SQL> 
-SQL> 
-SQL> 
-SQL> 
-SQL> 
-SQL> QUESTION 9------------------------------
-SQL> 
+
 S
 
 SQL> ed
@@ -332,8 +290,7 @@ PAINLESS CHILD-REARING         2491748320
 
 SQL> 
 SQL> 
-SQL> 
-SQL> QUESTION 10---------------------------------------
+
 SQL> 
 SQ
   1  select title, pubdate
@@ -352,17 +309,6 @@ SHORTEST POEMS                 01-MAY-05
 
 6 rows selected.
 
-SQL> ed
-Wrote file afiedt.buf
-
-  1  select title, pubdate
-  2  from books
-  3* where pubdate < '01-JAN-05' and > '31-DEC-05'
-SQL> /
-where pubdate < '01-JAN-05' and > '31-DEC-05'
-                                *
-ERROR at line 3:
-ORA-00936: missing expression 
 
 
 SQL> spool off
